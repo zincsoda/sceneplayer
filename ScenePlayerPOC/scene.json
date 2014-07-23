@@ -1,0 +1,61 @@
+{
+  "context": {
+    "duration": {
+      "value": 60,
+      "timescale": 1
+    }
+  },
+  "segments": [
+               {
+               "properties": {
+               "time_range": {
+               "start": {
+               "value": 0,
+               "timescale": 1
+               },
+               "duration": {
+               "value": 32,
+               "timescale": 1
+               }
+               },
+               "template_id": "4"
+               },
+               "layers": [
+                          {
+                          "layer_type": "video",
+                          "properties": {
+                          "timeRange": {
+                          "start": {
+                          "value": 0,
+                          "timescale": 1
+                          },
+                          "duration": {
+                          "value": 32,
+                          "timescale": 1
+                          }
+                          }
+                          },
+                          "url": "https://dl.dropboxusercontent.com/u/2572615/School%20App%20Kit%20Star%20Wars.m4v"
+                          },
+                          {
+                          "layer_type": "lower_third",
+                          "properties": {
+                          "layer_style_id": 1,
+                          "time_range": {
+                          "start": {
+                          "value": 5,
+                          "timescale": 1
+                          },
+                          "duration": {
+                          "value": 5,
+                          "timescale": 1
+                          }
+                          },
+                          "title": "Airbus",
+                          "subtitle": "Makes stuff"
+                          }
+                          }
+                          ]
+               }
+               ]
+}

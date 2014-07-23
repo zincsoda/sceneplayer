@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C37C844197FBF79004E1D81 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C37C843197FBF79004E1D81 /* Cocoa.framework */; };
+		2C37C84E197FBF7A004E1D81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C37C84C197FBF7A004E1D81 /* InfoPlist.strings */; };
+		2C37C850197FBF7A004E1D81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37C84F197FBF7A004E1D81 /* main.m */; };
+		2C37C854197FBF7A004E1D81 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2C37C852197FBF7A004E1D81 /* Credits.rtf */; };
+		2C37C857197FBF7A004E1D81 /* SBTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37C856197FBF7A004E1D81 /* SBTAppDelegate.m */; };
+		2C37C85A197FBF7A004E1D81 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C37C858197FBF7A004E1D81 /* MainMenu.xib */; };
+		2C37C85C197FBF7A004E1D81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C37C85B197FBF7A004E1D81 /* Images.xcassets */; };
+		2C37C863197FBF7A004E1D81 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C37C862197FBF7A004E1D81 /* XCTest.framework */; };
+		2C37C864197FBF7A004E1D81 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C37C843197FBF79004E1D81 /* Cocoa.framework */; };
+		2C37C86C197FBF7A004E1D81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C37C86A197FBF7A004E1D81 /* InfoPlist.strings */; };
+		2C37C86E197FBF7A004E1D81 /* ScenePlayerPOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37C86D197FBF7A004E1D81 /* ScenePlayerPOCTests.m */; };
+		2C37C878197FBFAD004E1D81 /* scene.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C37C877197FBFAD004E1D81 /* scene.json */; };
+		2C37C87A197FE9D3004E1D81 /* burj.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2C37C879197FE9D3004E1D81 /* burj.mp4 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C37C865197FBF7A004E1D81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C37C838197FBF79004E1D81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C37C83F197FBF79004E1D81;
+			remoteInfo = ScenePlayerPOC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2C37C840197FBF79004E1D81 /* ScenePlayerPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenePlayerPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C37C843197FBF79004E1D81 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2C37C846197FBF79004E1D81 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2C37C847197FBF79004E1D81 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2C37C848197FBF79004E1D81 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2C37C84B197FBF7A004E1D81 /* ScenePlayerPOC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScenePlayerPOC-Info.plist"; sourceTree = "<group>"; };
+		2C37C84D197FBF7A004E1D81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C37C84F197FBF7A004E1D81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C37C851197FBF7A004E1D81 /* ScenePlayerPOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScenePlayerPOC-Prefix.pch"; sourceTree = "<group>"; };
+		2C37C853197FBF7A004E1D81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2C37C855197FBF7A004E1D81 /* SBTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTAppDelegate.h; sourceTree = "<group>"; };
+		2C37C856197FBF7A004E1D81 /* SBTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTAppDelegate.m; sourceTree = "<group>"; };
+		2C37C859197FBF7A004E1D81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2C37C85B197FBF7A004E1D81 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2C37C861197FBF7A004E1D81 /* ScenePlayerPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScenePlayerPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C37C862197FBF7A004E1D81 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2C37C869197FBF7A004E1D81 /* ScenePlayerPOCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScenePlayerPOCTests-Info.plist"; sourceTree = "<group>"; };
+		2C37C86B197FBF7A004E1D81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C37C86D197FBF7A004E1D81 /* ScenePlayerPOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScenePlayerPOCTests.m; sourceTree = "<group>"; };
+		2C37C877197FBFAD004E1D81 /* scene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = scene.json; sourceTree = "<group>"; };
+		2C37C879197FE9D3004E1D81 /* burj.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = burj.mp4; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C37C83D197FBF79004E1D81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C37C844197FBF79004E1D81 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C37C85E197FBF7A004E1D81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C37C864197FBF7A004E1D81 /* Cocoa.framework in Frameworks */,
+				2C37C863197FBF7A004E1D81 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C37C837197FBF79004E1D81 = {
+			isa = PBXGroup;
+			children = (
+				2C37C849197FBF79004E1D81 /* ScenePlayerPOC */,
+				2C37C867197FBF7A004E1D81 /* ScenePlayerPOCTests */,
+				2C37C842197FBF79004E1D81 /* Frameworks */,
+				2C37C841197FBF79004E1D81 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C37C841197FBF79004E1D81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C37C840197FBF79004E1D81 /* ScenePlayerPOC.app */,
+				2C37C861197FBF7A004E1D81 /* ScenePlayerPOCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C37C842197FBF79004E1D81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C37C843197FBF79004E1D81 /* Cocoa.framework */,
+				2C37C862197FBF7A004E1D81 /* XCTest.framework */,
+				2C37C845197FBF79004E1D81 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C37C845197FBF79004E1D81 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C37C846197FBF79004E1D81 /* AppKit.framework */,
+				2C37C847197FBF79004E1D81 /* CoreData.framework */,
+				2C37C848197FBF79004E1D81 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		2C37C849197FBF79004E1D81 /* ScenePlayerPOC */ = {
+			isa = PBXGroup;
+			children = (
+				2C37C879197FE9D3004E1D81 /* burj.mp4 */,
+				2C37C855197FBF7A004E1D81 /* SBTAppDelegate.h */,
+				2C37C856197FBF7A004E1D81 /* SBTAppDelegate.m */,
+				2C37C858197FBF7A004E1D81 /* MainMenu.xib */,
+				2C37C85B197FBF7A004E1D81 /* Images.xcassets */,
+				2C37C84A197FBF7A004E1D81 /* Supporting Files */,
+				2C37C877197FBFAD004E1D81 /* scene.json */,
+			);
+			path = ScenePlayerPOC;
+			sourceTree = "<group>";
+		};
+		2C37C84A197FBF7A004E1D81 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C37C84B197FBF7A004E1D81 /* ScenePlayerPOC-Info.plist */,
+				2C37C84C197FBF7A004E1D81 /* InfoPlist.strings */,
+				2C37C84F197FBF7A004E1D81 /* main.m */,
+				2C37C851197FBF7A004E1D81 /* ScenePlayerPOC-Prefix.pch */,
+				2C37C852197FBF7A004E1D81 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C37C867197FBF7A004E1D81 /* ScenePlayerPOCTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C37C86D197FBF7A004E1D81 /* ScenePlayerPOCTests.m */,
+				2C37C868197FBF7A004E1D81 /* Supporting Files */,
+			);
+			path = ScenePlayerPOCTests;
+			sourceTree = "<group>";
+		};
+		2C37C868197FBF7A004E1D81 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C37C869197FBF7A004E1D81 /* ScenePlayerPOCTests-Info.plist */,
+				2C37C86A197FBF7A004E1D81 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C37C83F197FBF79004E1D81 /* ScenePlayerPOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C37C871197FBF7A004E1D81 /* Build configuration list for PBXNativeTarget "ScenePlayerPOC" */;
+			buildPhases = (
+				2C37C83C197FBF79004E1D81 /* Sources */,
+				2C37C83D197FBF79004E1D81 /* Frameworks */,
+				2C37C83E197FBF79004E1D81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScenePlayerPOC;
+			productName = ScenePlayerPOC;
+			productReference = 2C37C840197FBF79004E1D81 /* ScenePlayerPOC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C37C860197FBF7A004E1D81 /* ScenePlayerPOCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C37C874197FBF7A004E1D81 /* Build configuration list for PBXNativeTarget "ScenePlayerPOCTests" */;
+			buildPhases = (
+				2C37C85D197FBF7A004E1D81 /* Sources */,
+				2C37C85E197FBF7A004E1D81 /* Frameworks */,
+				2C37C85F197FBF7A004E1D81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C37C866197FBF7A004E1D81 /* PBXTargetDependency */,
+			);
+			name = ScenePlayerPOCTests;
+			productName = ScenePlayerPOCTests;
+			productReference = 2C37C861197FBF7A004E1D81 /* ScenePlayerPOCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C37C838197FBF79004E1D81 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SBT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Steve Walsh";
+				TargetAttributes = {
+					2C37C860197FBF7A004E1D81 = {
+						TestTargetID = 2C37C83F197FBF79004E1D81;
+					};
+				};
+			};
+			buildConfigurationList = 2C37C83B197FBF79004E1D81 /* Build configuration list for PBXProject "ScenePlayerPOC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C37C837197FBF79004E1D81;
+			productRefGroup = 2C37C841197FBF79004E1D81 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C37C83F197FBF79004E1D81 /* ScenePlayerPOC */,
+				2C37C860197FBF7A004E1D81 /* ScenePlayerPOCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C37C83E197FBF79004E1D81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C37C84E197FBF7A004E1D81 /* InfoPlist.strings in Resources */,
+				2C37C85C197FBF7A004E1D81 /* Images.xcassets in Resources */,
+				2C37C878197FBFAD004E1D81 /* scene.json in Resources */,
+				2C37C854197FBF7A004E1D81 /* Credits.rtf in Resources */,
+				2C37C87A197FE9D3004E1D81 /* burj.mp4 in Resources */,
+				2C37C85A197FBF7A004E1D81 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C37C85F197FBF7A004E1D81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C37C86C197FBF7A004E1D81 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C37C83C197FBF79004E1D81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C37C857197FBF7A004E1D81 /* SBTAppDelegate.m in Sources */,
+				2C37C850197FBF7A004E1D81 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C37C85D197FBF7A004E1D81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C37C86E197FBF7A004E1D81 /* ScenePlayerPOCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C37C866197FBF7A004E1D81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C37C83F197FBF79004E1D81 /* ScenePlayerPOC */;
+			targetProxy = 2C37C865197FBF7A004E1D81 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2C37C84C197FBF7A004E1D81 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C37C84D197FBF7A004E1D81 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2C37C852197FBF7A004E1D81 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C37C853197FBF7A004E1D81 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2C37C858197FBF7A004E1D81 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C37C859197FBF7A004E1D81 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		2C37C86A197FBF7A004E1D81 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C37C86B197FBF7A004E1D81 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C37C86F197FBF7A004E1D81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2C37C870197FBF7A004E1D81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2C37C872197FBF7A004E1D81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScenePlayerPOC/ScenePlayerPOC-Prefix.pch";
+				INFOPLIST_FILE = "ScenePlayerPOC/ScenePlayerPOC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2C37C873197FBF7A004E1D81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScenePlayerPOC/ScenePlayerPOC-Prefix.pch";
+				INFOPLIST_FILE = "ScenePlayerPOC/ScenePlayerPOC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2C37C875197FBF7A004E1D81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScenePlayerPOC.app/Contents/MacOS/ScenePlayerPOC";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScenePlayerPOC/ScenePlayerPOC-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ScenePlayerPOCTests/ScenePlayerPOCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2C37C876197FBF7A004E1D81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScenePlayerPOC.app/Contents/MacOS/ScenePlayerPOC";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScenePlayerPOC/ScenePlayerPOC-Prefix.pch";
+				INFOPLIST_FILE = "ScenePlayerPOCTests/ScenePlayerPOCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C37C83B197FBF79004E1D81 /* Build configuration list for PBXProject "ScenePlayerPOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C37C86F197FBF7A004E1D81 /* Debug */,
+				2C37C870197FBF7A004E1D81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C37C871197FBF7A004E1D81 /* Build configuration list for PBXNativeTarget "ScenePlayerPOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C37C872197FBF7A004E1D81 /* Debug */,
+				2C37C873197FBF7A004E1D81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2C37C874197FBF7A004E1D81 /* Build configuration list for PBXNativeTarget "ScenePlayerPOCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C37C875197FBF7A004E1D81 /* Debug */,
+				2C37C876197FBF7A004E1D81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C37C838197FBF79004E1D81 /* Project object */;
+}
