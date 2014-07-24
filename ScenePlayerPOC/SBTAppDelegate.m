@@ -84,8 +84,6 @@
   [self.greenBoxView.layer addAnimation:theAnim forKey:@"transform.rotation"];
 
   
-  
-  
   CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:animationInfo];
   
   [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
@@ -97,7 +95,18 @@
     }
   }];
   [self.greenBoxView.layer setValue:ani.toValue forKey:ani.keyPath];
+  self.greenBoxView.layer.speed = 0.0f;
 
+}
+- (IBAction)sliderChanged:(id)sender {
+  
+  float s = [sender floatValue];
+  
+  float position = 15.5*s;
+
+  self.greenBoxView.layer.timeOffset = position;
+  
+  
 }
 
 - (void)killThatDamnedBox:(NSTimeInterval)time {
@@ -134,12 +143,12 @@
 -(void)playLayer:(CALayer*)layer AtTime:(NSTimeInterval)time {
   
   
-  
+//  layer.speed = 0.0;
+
   CFTimeInterval pausedTime = [layer timeOffset];  /// 12:30:05
   NSLog(@"Paused Time : %f",pausedTime);
   NSLog(@"Layer Time Begin Time: %f",layer.beginTime);
   
-  layer.speed = 1.0;
   layer.timeOffset = time;
   layer.beginTime = 0.0;
   CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime ;
@@ -153,13 +162,7 @@
 
 - (IBAction)resume:(id)sender {
   
-  NSTimeInterval x = 2;
-//
-//  self.greenBoxView.layer.speed = 0.0f;
-//  self.greenBoxView.layer.timeOffset = x;
-//  
-
-  [self resumeLayer:self.greenBoxView.layer];
+  self.greenBoxView.layer.speed = 1.0f;
 }
 - (IBAction)pauseAnimation:(id)sender {
   
@@ -184,7 +187,6 @@
 }
 
 -(void)resumeLayer:(CALayer*)layer {
-  
   
   
   CFTimeInterval pausedTime = [layer timeOffset];  /// 12:30:05
