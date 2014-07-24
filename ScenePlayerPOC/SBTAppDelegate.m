@@ -7,17 +7,17 @@
 //
 
 #import "SBTAppDelegate.h"
-//@import AVFoundation.AVSynchronizedLayer;
-@import AVFoundation;
+#import "RMBSceneTimer.h"
+#import "CABasicAnimation+addons.h"
 
-
-@interface SBTAppDelegate ()
-
-//@property (nonatomic, strong) AVAsset *assetForPlayback;
-@property (nonatomic, strong) AVPlayer *player;
-@property (nonatomic, strong) AVPlayerLayer *playerLayer;
+@interface SBTAppDelegate () <RMBSceneTimerDelegate>
 
 @property (weak) IBOutlet NSView *sceneView;
+@property (nonatomic) RMBSceneTimer *timer;
+@property (weak) IBOutlet NSTextField *timeLabel;
+@property (nonatomic) NSTimeInterval lastTimerTick;
+
+@property (strong, nonatomic) NSView *greenBoxView;
 
 @end
 
@@ -25,34 +25,93 @@
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
+  self.timer = [RMBSceneTimer sceneTimerWithDelegate:self];
+  [self.timer start];
+  
   [self.sceneView setWantsLayer:YES];
-
-  NSURL *videoURL = [[NSBundle mainBundle]
-                    URLForResource:@"burj" withExtension:@"mp4"];
-  AVURLAsset *video = [AVURLAsset URLAssetWithURL:videoURL options:nil];
+  CALayer *viewLayer = [CALayer layer];
+  viewLayer.backgroundColor = [NSColor orangeColor].CGColor;
+  [self.sceneView setLayer:viewLayer];
   
-  [video loadValuesAsynchronouslyForKeys:@[@"tracks"] completionHandler:^{
-   dispatch_async(dispatch_get_main_queue(),
-   ^{
-     NSError *error;
-     AVKeyValueStatus status = [video statusOfValueForKey:@"tracks" error:&error];
-     if (status == AVKeyValueStatusLoaded) {
-       AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:video];
-       self.player = [AVPlayer playerWithPlayerItem:playerItem];
-       self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-       
-       
+  // Set up our green box view
+  self.greenBoxView = [[NSView alloc] initWithFrame:NSMakeRect(10, 10, 100, 100)];
+  CALayer *greenViewLayer = [CALayer layer];
+  greenViewLayer.backgroundColor = [NSColor greenColor].CGColor;
+  [self.greenBoxView setLayer:greenViewLayer];
+}
 
-       [self.sceneView setLayer:self.playerLayer];
-       
-       [self.player play];
-     } else {
-       NSLog(@"The asset's tracks were not loaded:\n%@", [error localizedDescription]);
-     }
-   });
+- (void)timeUpdate:(NSTimeInterval)time {
+  
+  int64_t ms = (int64_t)(time * 1000);
+  if ((ms % 1000) < 10) {
+    NSLog(@"Time = %@", [NSString stringWithFormat:@"%f", time]);
+   [self.timeLabel setStringValue:[NSString stringWithFormat:@"%d", (int)time]];
+  }
+  
+  NSTimeInterval greenBoxPresentationTime = 1.5;
+  if (greenBoxPresentationTime >= self.lastTimerTick && greenBoxPresentationTime <= time) {
+    [self presentGreenBox:time];
+  }
+  
+  NSTimeInterval greenBoxDeathTime = 4.0;
+  if (greenBoxDeathTime >= self.lastTimerTick && greenBoxDeathTime <= time) {
+    [self killThatDamnedBox:time];
+  }
+  
+  self.lastTimerTick = time;
+}
+
+- (void)presentGreenBox:(NSTimeInterval)time {
+    NSLog(@"Presenting green box at %@", [NSString stringWithFormat:@"%f", time]);
+  NSDictionary *animationInfo = @{
+                                  @"keyPath": @"opacity",
+                                  @"fromValue": @"0.0",
+                                  @"toValue": @"0.7",
+                                  @"duration": @"1.5"
+                                  };
+
+  [self.sceneView addSubview:self.greenBoxView];
+
+  CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:animationInfo];
+  
+  [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+    [self.greenBoxView.layer addAnimation:ani forKey:ani.keyPath];
+  } completionHandler:^{
+    if ([ani.toValue isEqual:@0.0f] && [ani.keyPath isEqualToString:@"opacity"]) {
+      [self.greenBoxView removeFromSuperview];
+    }
   }];
-  
+  [self.greenBoxView.layer setValue:ani.toValue forKey:ani.keyPath];
 
+}
+
+- (void)killThatDamnedBox:(NSTimeInterval)time {
+  NSDictionary *animationInfo = @{
+                                  @"keyPath": @"opacity",
+                                  @"fromValue": @"0.7",
+                                  @"toValue": @"0.0",
+                                  @"duration": @"1.5"
+                                  };
+  
+ 
+  CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:animationInfo];
+ [self.greenBoxView.layer setValue:ani.toValue forKey:ani.keyPath];
+  [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+    [self.greenBoxView.layer addAnimation:ani forKey:ani.keyPath];
+  } completionHandler:^{
+    if ([ani.toValue isEqual:@0.0f] && [ani.keyPath isEqualToString:@"opacity"]) {
+      [self.greenBoxView removeFromSuperview];
+    }
+  }];
+
+}
+
+- (IBAction)goToX:(id)sender {
+  
+  NSTimeInterval x = 2;
+  
+  
+  
 }
 
 @end
