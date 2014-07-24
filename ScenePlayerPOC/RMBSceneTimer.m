@@ -8,6 +8,13 @@
 
 #import "RMBSceneTimer.h"
 
+@interface RMBSceneTimer()
+
+@property (nonatomic) NSTimer *timer;
+@property BOOL paused;
+
+@end
+
 @implementation RMBSceneTimer
 
 +(instancetype)sceneTimer
@@ -25,19 +32,30 @@
 - (void)start
 {
   self.sceneTime = 0.0f;
+  self.paused = NO;
   self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(tick:) userInfo:nil repeats:YES];
 }
 
 - (void)tick:(NSTimer *)timer
 {
-  self.sceneTime += self.timer.timeInterval;
-  [self.delegate timeUpdate:self.sceneTime];
+  if (self.paused == NO) {
+    self.sceneTime += self.timer.timeInterval;
+    [self.delegate timeUpdate:self.sceneTime];
+  }
 }
 
 - (void)stop
 {
   [self.timer invalidate];
   self.timer = nil;
+}
+
+- (void)pause {
+  self.paused = YES;
+}
+
+- (void)resume {
+  self.paused = NO;
 }
 
 @end

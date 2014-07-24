@@ -15,18 +15,18 @@
 
 @interface RMBSceneTimer : NSObject
 
-+(instancetype)sceneTimer;
 +(instancetype)sceneTimerWithDelegate:(id<RMBSceneTimerDelegate>)delegate;
 
 @property (nonatomic, weak) id<RMBSceneTimerDelegate> delegate;
-@property (nonatomic) NSTimer *timer;
 @property (nonatomic) NSTimeInterval sceneTime;
 
-/**
- * Starts timer
- */
+
 - (void)start;
+
 - (void)stop;
 
+- (void)pause;
+
+- (void)resume;
 
 @end
