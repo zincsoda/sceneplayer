@@ -116,7 +116,6 @@
 
   
   CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:animationInfo];
-  [self.greenBoxView.layer setValue:ani.toValue forKey:ani.keyPath];
   
   [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
     [self.greenBoxView.layer addAnimation:ani forKey:ani.keyPath];
@@ -138,6 +137,9 @@
     self.greenBoxView.layer.timeOffset = timeOffset;
   }
 }
+
+
+
 
 
 - (void)goToAnimationAtTime:(NSTimeInterval)time {
