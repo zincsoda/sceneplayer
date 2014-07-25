@@ -30,14 +30,15 @@
 
 - (NSArray*)sceneElements {
   
-  return @[@{
-             @"name": @"Fade Up",
-             @"keyPath": @"opacity",
-             @"presentationTime" : @"1",
-             @"fromValue": @"0.0",
-             @"toValue": @"1.0",
-             @"duration": @"4"
-             },
+  return @[
+//  @{
+//             @"name": @"Fade Up",
+//             @"keyPath": @"opacity",
+//             @"presentationTime" : @"1",
+//             @"fromValue": @"0.5",
+//             @"toValue": @"1.0",
+//             @"duration": @"4"
+//             },
            @{
              @"name": @"Rotate",
              @"keyPath": @"transform.rotation",
@@ -51,7 +52,7 @@
              @"keyPath": @"opacity",
              @"presentationTime" : @"6",
              @"fromValue": @"1.0",
-             @"toValue": @"0.0",
+             @"toValue": @"0.5",
              @"duration": @"3"
              }
            ];
@@ -72,6 +73,9 @@
   CALayer *greenViewLayer = [CALayer layer];
   greenViewLayer.backgroundColor = [NSColor greenColor].CGColor;
   [self.greenBoxView setLayer:greenViewLayer];
+  [self.sceneView addSubview:self.greenBoxView];
+  self.greenBoxView.layer.speed = 0.0f;
+
 
 }
 
@@ -107,14 +111,7 @@
 
 - (void)presentGreenBox:(NSTimeInterval)time UsingSceneElementData:(NSDictionary *)animationInfo WithTimeOffset:(NSTimeInterval)timeOffset andScrubbing:(BOOL)isScrubbing {
   
-  
-  for (NSView *view in [self.sceneView subviews] ){
-    [view removeFromSuperview];
-  }
-  
-  [self.sceneView addSubview:self.greenBoxView];
 
-  
   CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:animationInfo];
   
   [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
@@ -122,7 +119,7 @@
   } completionHandler:^{
     NSLog(@"Animation : %@ over ", animationInfo[@"name"]);
     if ([ani.toValue isEqual:@0.0f] && [ani.keyPath isEqualToString:@"opacity"]) {
-      [self.greenBoxView removeFromSuperview];
+//      [self.greenBoxView removeFromSuperview];
     }
   }];
   [self.greenBoxView.layer setValue:ani.toValue forKey:ani.keyPath];
@@ -132,10 +129,10 @@
   else {
     self.greenBoxView.layer.speed = 1.0f;
   }
-  
-  if (timeOffset) {
-    self.greenBoxView.layer.timeOffset = timeOffset;
-  }
+//  
+//  if (timeOffset) {
+//    self.greenBoxView.layer.timeOffset = timeOffset;
+//  }
 }
 
 
@@ -153,8 +150,9 @@
   // need to convert animation times to project time
   
   // Suspect we will have to remove any currently playing animations that are OUTSIDE the current timeframe
-    [self.greenBoxView.layer removeAllAnimations];
-  
+//    [self.greenBoxView.layer removeAllAnimations];
+  self.greenBoxView.layer.speed = 0.0f;
+
   for (NSDictionary *sceneElement in self.sceneElements) {
     
     float presentationTime = [sceneElement[@"presentationTime"] floatValue];
@@ -166,6 +164,11 @@
       //calculate the distance between The playhead and where we should be in the animation
       
       float timeOffset = time - presentationTime;
+      
+      
+      // go get the layer we want to offset
+      self.greenBoxView.layer.timeOffset = timeOffset;
+      
       [self presentGreenBox:time UsingSceneElementData:sceneElement WithTimeOffset:timeOffset andScrubbing:YES];
       
       NSLog(@"Animation : %@ scrubbed to time : %f", sceneElement[@"name"], time);

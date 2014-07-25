@@ -694,7 +694,7 @@
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vj3-Ol-Mbi">
                         <rect key="frame" x="18" y="25" width="444" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="below" numberOfTickMarks="6" allowsTickMarkValuesOnly="YES" sliderType="linear" id="hhJ-k9-rel"/>
+                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="below" numberOfTickMarks="11" sliderType="linear" id="hhJ-k9-rel"/>
                         <connections>
                             <action selector="sliderChanged:" target="Voe-Tx-rLC" id="d1d-MN-D0b"/>
                         </connections>
