@@ -8,6 +8,12 @@
 
 #import "RMBSceneTimer.h"
 
+@interface RMBSceneTimer ()
+
+@property BOOL isPaused;
+
+@end
+
 @implementation RMBSceneTimer
 
 +(instancetype)sceneTimer
@@ -19,6 +25,7 @@
 {
   RMBSceneTimer *sceneTimer = [self sceneTimer];
   sceneTimer.delegate = delegate;
+  sceneTimer.isPaused = YES;
   return sceneTimer;
 }
 
@@ -30,8 +37,11 @@
 
 - (void)tick:(NSTimer *)timer
 {
-  self.sceneTime += self.timer.timeInterval;
-  [self.delegate timeUpdate:self.sceneTime];
+  if (self.isPaused == NO) {
+    self.sceneTime += self.timer.timeInterval;
+    [self.delegate timeUpdate:self.sceneTime];
+  }
+
 }
 
 - (void)stop
@@ -39,5 +49,18 @@
   [self.timer invalidate];
   self.timer = nil;
 }
+
+- (void)pause
+{
+  self.isPaused = YES;
+ 
+}
+
+- (void)resume
+{
+  self.isPaused = NO;
+}
+
+
 
 @end

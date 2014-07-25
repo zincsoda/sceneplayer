@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427908014.120253"
+            timestampString = "427980666.034067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231">
+            startingLineNumber = "241"
+            endingLineNumber = "241">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,12 +24,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427907818.149807"
+            timestampString = "427980666.034067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "-pauseAnimation:"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-presentGreenBox:UsingSceneElementData:WithTimeOffset:andScrubbing:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -40,12 +40,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427907818.149807"
+            timestampString = "427980738.304521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "-pauseLayer:"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-presentGreenBox:UsingSceneElementData:WithTimeOffset:andScrubbing:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -56,28 +56,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427907818.149807"
+            timestampString = "427980777.987655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "-playLayer:AtTime:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427907838.826781"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "-resume:"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-presentGreenBox:UsingSceneElementData:WithTimeOffset:andScrubbing:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
