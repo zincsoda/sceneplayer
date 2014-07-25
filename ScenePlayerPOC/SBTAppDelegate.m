@@ -71,7 +71,7 @@
 
 - (void)createAnimationView{
   
-  self.greenBoxView = [[NSView alloc] initWithFrame:NSMakeRect(150, 150, 100, 100)];
+  self.greenBoxView = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
   CALayer *greenViewLayer = [CALayer layer];
   greenViewLayer.backgroundColor = [NSColor greenColor].CGColor;
   [self.greenBoxView setLayer:greenViewLayer];
