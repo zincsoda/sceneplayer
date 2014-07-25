@@ -39,7 +39,7 @@
              @"presentationTime" : @"1",
              @"toValue": @(-M_PI / 2.f),
              @"fromValue": @(0.f),
-             @"duration": @"5"
+             @"duration": @"4"
              },
            // If there is a gap between timings the animation will jump back to the 'fromValue'
            @{
@@ -85,6 +85,8 @@
     float presentationTime = [sceneElement[@"presentationTime"] floatValue];
     CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:sceneElement];
     ani.beginTime = presentationTime;
+    [ani setFillMode:kCAFillModeForwards];
+    [ani setRemovedOnCompletion:NO];
     [animations addObject:ani];
     
   }
