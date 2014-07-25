@@ -14,8 +14,17 @@
 {
   CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:settings[@"keyPath"]];
   
+  if ([settings[@"keyPath"] isEqualToString:@"position"]) {
+    
+    NSPoint fromPoint = NSPointFromString(settings[@"fromValue"]);
+    animation.fromValue  =  [NSValue valueWithPoint:fromPoint];
+    NSPoint toPoint = NSPointFromString(settings[@"toValue"]);
+    animation.toValue  =  [NSValue valueWithPoint:toPoint];  }
+  else
+  {
   animation.fromValue = [NSNumber numberWithFloat:[settings[@"fromValue"] floatValue]];
   animation.toValue = [NSNumber numberWithFloat:[settings[@"toValue"] floatValue]];
+  }
   animation.duration = [settings[@"duration"] floatValue];
   
   return animation;
