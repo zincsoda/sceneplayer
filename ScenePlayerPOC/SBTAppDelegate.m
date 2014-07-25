@@ -70,7 +70,7 @@
     NSLog(@"Presenting green box at %@", [NSString stringWithFormat:@"%f", time]);
   NSDictionary *animationInfo = @{
                                   @"keyPath": @"opacity",
-                                  @"fromValue": @"0.5",
+                                  @"fromValue": @"0",
                                   @"toValue": @"1.0",
                                   @"duration": @"15.5"
                                   };
