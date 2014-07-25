@@ -35,7 +35,7 @@
 //             @"name": @"Fade Up",
 //             @"keyPath": @"opacity",
 //             @"presentationTime" : @"1",
-//             @"fromValue": @"0.5",
+//             @"fromValue": @"0.1",
 //             @"toValue": @"1.0",
 //             @"duration": @"4"
 //             },
@@ -46,15 +46,16 @@
              @"fromValue": @(-M_PI / 2.f),
              @"toValue": @(0.f),
              @"duration": @"4"
-             },
-           @{
-             @"name": @"Fade Down",
-             @"keyPath": @"opacity",
-             @"presentationTime" : @"6",
-             @"fromValue": @"1.0",
-             @"toValue": @"0.5",
-             @"duration": @"3"
              }
+//           ,
+//           @{
+//             @"name": @"Fade Down",
+//             @"keyPath": @"opacity",
+//             @"presentationTime" : @"6",
+//             @"fromValue": @"1.0",
+//             @"toValue": @"0.1",
+//             @"duration": @"3"
+//             }
            ];
 }
 
@@ -73,10 +74,31 @@
   CALayer *greenViewLayer = [CALayer layer];
   greenViewLayer.backgroundColor = [NSColor greenColor].CGColor;
   [self.greenBoxView setLayer:greenViewLayer];
-  [self.sceneView addSubview:self.greenBoxView];
+
+  self.slider.minValue = 0;
+  self.slider.maxValue = 10;
+  
+//  [self goToAnimationAtTime:3];
+
+}
+- (IBAction)start:(id)sender {
+  
   self.greenBoxView.layer.speed = 0.0f;
+  
+  [self presentGreenBox:0 UsingSceneElementData:
+   @{
+     @"name": @"Rotate",
+     @"keyPath": @"transform.rotation",
+     @"presentationTime" : @"1",
+     @"fromValue": @(-M_PI / 2.f),
+     @"toValue": @(0.f),
+     @"duration": @"4"
+     }
+   
+         WithTimeOffset:2 andScrubbing:YES];
 
-
+  
+  
 }
 
 - (void)timeUpdate:(NSTimeInterval)time {
@@ -90,6 +112,8 @@
   // Receiving ticks every 10 milliseconds
   // Check if any of the sceneElements are ready to play
   
+  [self.slider setDoubleValue:time];
+  
   for (NSDictionary *sceneElement in self.sceneElements) {
     
     float presentationTime = [sceneElement[@"presentationTime"] floatValue];
@@ -98,6 +122,7 @@
       //begin this animation
       
       [self presentGreenBox:time UsingSceneElementData:sceneElement WithTimeOffset:kSBTZEROTIMEOFFSET andScrubbing:NO];
+      
       NSLog(@"Animation : %@ started at time : %f", sceneElement[@"name"], time);
     }
   }
@@ -111,31 +136,33 @@
 
 - (void)presentGreenBox:(NSTimeInterval)time UsingSceneElementData:(NSDictionary *)animationInfo WithTimeOffset:(NSTimeInterval)timeOffset andScrubbing:(BOOL)isScrubbing {
   
-
-  CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:animationInfo];
   
+  for (NSView *view in [self.sceneView subviews] ){
+    [view removeFromSuperview];
+  }
+  
+  [self.sceneView addSubview:self.greenBoxView];
+//  [self.greenBoxView.layer removeAllAnimations];
+  CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:animationInfo];
+
   [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
     [self.greenBoxView.layer addAnimation:ani forKey:ani.keyPath];
+
   } completionHandler:^{
     NSLog(@"Animation : %@ over ", animationInfo[@"name"]);
     if ([ani.toValue isEqual:@0.0f] && [ani.keyPath isEqualToString:@"opacity"]) {
 //      [self.greenBoxView removeFromSuperview];
     }
   }];
+
   [self.greenBoxView.layer setValue:ani.toValue forKey:ani.keyPath];
-  if (isScrubbing) {
-    self.greenBoxView.layer.speed = 0.0f;
+
+  if (timeOffset) {
+    self.greenBoxView.layer.beginTime = 0.0;
+    self.greenBoxView.layer.timeOffset = timeOffset;
   }
-  else {
-    self.greenBoxView.layer.speed = 1.0f;
-  }
-//  
-//  if (timeOffset) {
-//    self.greenBoxView.layer.timeOffset = timeOffset;
-//  }
+  
 }
-
-
 
 
 
@@ -150,8 +177,9 @@
   // need to convert animation times to project time
   
   // Suspect we will have to remove any currently playing animations that are OUTSIDE the current timeframe
-//    [self.greenBoxView.layer removeAllAnimations];
-  self.greenBoxView.layer.speed = 0.0f;
+  //[self.greenBoxView.layer removeAllAnimations];
+  
+
 
   for (NSDictionary *sceneElement in self.sceneElements) {
     
@@ -167,11 +195,11 @@
       
       
       // go get the layer we want to offset
-      self.greenBoxView.layer.timeOffset = timeOffset;
+//      self.greenBoxView.layer.timeOffset = timeOffset;
       
       [self presentGreenBox:time UsingSceneElementData:sceneElement WithTimeOffset:timeOffset andScrubbing:YES];
       
-      NSLog(@"Animation : %@ scrubbed to time : %f", sceneElement[@"name"], time);
+      NSLog(@"Animation : %@ scrubbed to time : %f using timeOffset : %f", sceneElement[@"name"], time, timeOffset);
     }
   }
   
@@ -183,8 +211,7 @@
 
 - (IBAction)sliderChanged:(id)sender {
   
-  float s = [sender floatValue];
-  float position = 10.0*s;
+  float position = [sender floatValue];
   
   /*
    
@@ -197,12 +224,13 @@
    go to a point in time, work out what animations should be playing, animate to that time
    
    */
-  
+//  self.greenBoxView.layer.timeOffset = position;
+
   [self.timer pause];
   self.greenBoxView.layer.speed = 0.0f;
   [self.timer setSceneTime:position];
   self.lastTimerTick = position;
-  [self goToAnimationAtTime:position];
+ [self goToAnimationAtTime:position];
   
 }
 
