@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427997005.651239"
+            filePath = "ScenePlayerPOC/RMBSceneTimer.m"
+            timestampString = "428015255.949673"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "-goToAnimationAtTime:"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-stop"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427997005.651239"
+            filePath = "ScenePlayerPOC/RMBSceneTimer.m"
+            timestampString = "428015490.888411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "-goToAnimationAtTime:"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-resume"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,45 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427997005.651239"
+            filePath = "ScenePlayerPOC/RMBSceneTimer.m"
+            timestampString = "428015494.314451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "-goToAnimationAtTime:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427996853.921945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "-timeUpdate:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "427996853.921945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-applicationWillFinishLaunching:"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-start"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

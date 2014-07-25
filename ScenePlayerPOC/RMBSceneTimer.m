@@ -59,6 +59,10 @@
 - (void)resume
 {
   self.isPaused = NO;
+
+  if (self.timer ==  nil) {
+    [self start];
+  }
 }
 
 
