@@ -22,6 +22,20 @@
 		2C37C87A197FE9D3004E1D81 /* burj.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2C37C879197FE9D3004E1D81 /* burj.mp4 */; };
 		2C3BADA419800DF0009FACBD /* RMBSceneTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BADA319800DF0009FACBD /* RMBSceneTimer.m */; };
 		2C3BADA71981102E009FACBD /* CABasicAnimation+addons.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BADA61981102E009FACBD /* CABasicAnimation+addons.m */; };
+		8C0F4E8A19830C2900DE27FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0F4E8919830C2900DE27FB /* Foundation.framework */; };
+		8C0F4E8C19830C2900DE27FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0F4E8B19830C2900DE27FB /* CoreGraphics.framework */; };
+		8C0F4E8E19830C2900DE27FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0F4E8D19830C2900DE27FB /* UIKit.framework */; };
+		8C0F4E9419830C2900DE27FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F4E9219830C2900DE27FB /* InfoPlist.strings */; };
+		8C0F4E9619830C2900DE27FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F4E9519830C2900DE27FB /* main.m */; };
+		8C0F4E9A19830C2900DE27FB /* SBTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F4E9919830C2900DE27FB /* SBTAppDelegate.m */; };
+		8C0F4E9D19830C2900DE27FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F4E9B19830C2900DE27FB /* Main.storyboard */; };
+		8C0F4EA019830C2900DE27FB /* SBTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F4E9F19830C2900DE27FB /* SBTViewController.m */; };
+		8C0F4EA219830C2900DE27FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F4EA119830C2900DE27FB /* Images.xcassets */; };
+		8C0F4EA819830C2900DE27FB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C37C862197FBF7A004E1D81 /* XCTest.framework */; };
+		8C0F4EA919830C2900DE27FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0F4E8919830C2900DE27FB /* Foundation.framework */; };
+		8C0F4EAA19830C2900DE27FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0F4E8D19830C2900DE27FB /* UIKit.framework */; };
+		8C0F4EB219830C2900DE27FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F4EB019830C2900DE27FB /* InfoPlist.strings */; };
+		8C0F4EB419830C2900DE27FB /* iPadScenePlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F4EB319830C2900DE27FB /* iPadScenePlayerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +45,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2C37C83F197FBF79004E1D81;
 			remoteInfo = ScenePlayerPOC;
+		};
+		8C0F4EAB19830C2900DE27FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C37C838197FBF79004E1D81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C0F4E8719830C2900DE27FB;
+			remoteInfo = iPadScenePlayer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -60,6 +81,24 @@
 		2C3BADA319800DF0009FACBD /* RMBSceneTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBSceneTimer.m; sourceTree = "<group>"; };
 		2C3BADA51981102E009FACBD /* CABasicAnimation+addons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CABasicAnimation+addons.h"; sourceTree = "<group>"; };
 		2C3BADA61981102E009FACBD /* CABasicAnimation+addons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CABasicAnimation+addons.m"; sourceTree = "<group>"; };
+		8C0F4E8819830C2900DE27FB /* iPadScenePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadScenePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0F4E8919830C2900DE27FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8C0F4E8B19830C2900DE27FB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8C0F4E8D19830C2900DE27FB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		8C0F4E9119830C2900DE27FB /* iPadScenePlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPadScenePlayer-Info.plist"; sourceTree = "<group>"; };
+		8C0F4E9319830C2900DE27FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8C0F4E9519830C2900DE27FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8C0F4E9719830C2900DE27FB /* iPadScenePlayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPadScenePlayer-Prefix.pch"; sourceTree = "<group>"; };
+		8C0F4E9819830C2900DE27FB /* SBTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTAppDelegate.h; sourceTree = "<group>"; };
+		8C0F4E9919830C2900DE27FB /* SBTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTAppDelegate.m; sourceTree = "<group>"; };
+		8C0F4E9C19830C2900DE27FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C0F4E9E19830C2900DE27FB /* SBTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTViewController.h; sourceTree = "<group>"; };
+		8C0F4E9F19830C2900DE27FB /* SBTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTViewController.m; sourceTree = "<group>"; };
+		8C0F4EA119830C2900DE27FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8C0F4EA719830C2900DE27FB /* iPadScenePlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadScenePlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0F4EAF19830C2900DE27FB /* iPadScenePlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPadScenePlayerTests-Info.plist"; sourceTree = "<group>"; };
+		8C0F4EB119830C2900DE27FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8C0F4EB319830C2900DE27FB /* iPadScenePlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPadScenePlayerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +119,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C0F4E8519830C2900DE27FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0F4E8C19830C2900DE27FB /* CoreGraphics.framework in Frameworks */,
+				8C0F4E8E19830C2900DE27FB /* UIKit.framework in Frameworks */,
+				8C0F4E8A19830C2900DE27FB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C0F4EA419830C2900DE27FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0F4EA819830C2900DE27FB /* XCTest.framework in Frameworks */,
+				8C0F4EAA19830C2900DE27FB /* UIKit.framework in Frameworks */,
+				8C0F4EA919830C2900DE27FB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,6 +147,8 @@
 			children = (
 				2C37C849197FBF79004E1D81 /* ScenePlayerPOC */,
 				2C37C867197FBF7A004E1D81 /* ScenePlayerPOCTests */,
+				8C0F4E8F19830C2900DE27FB /* iPadScenePlayer */,
+				8C0F4EAD19830C2900DE27FB /* iPadScenePlayerTests */,
 				2C37C842197FBF79004E1D81 /* Frameworks */,
 				2C37C841197FBF79004E1D81 /* Products */,
 			);
@@ -98,6 +159,8 @@
 			children = (
 				2C37C840197FBF79004E1D81 /* ScenePlayerPOC.app */,
 				2C37C861197FBF7A004E1D81 /* ScenePlayerPOCTests.xctest */,
+				8C0F4E8819830C2900DE27FB /* iPadScenePlayer.app */,
+				8C0F4EA719830C2900DE27FB /* iPadScenePlayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +170,9 @@
 			children = (
 				2C37C843197FBF79004E1D81 /* Cocoa.framework */,
 				2C37C862197FBF7A004E1D81 /* XCTest.framework */,
+				8C0F4E8919830C2900DE27FB /* Foundation.framework */,
+				8C0F4E8B19830C2900DE27FB /* CoreGraphics.framework */,
+				8C0F4E8D19830C2900DE27FB /* UIKit.framework */,
 				2C37C845197FBF79004E1D81 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -170,6 +236,49 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8C0F4E8F19830C2900DE27FB /* iPadScenePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				8C0F4E9819830C2900DE27FB /* SBTAppDelegate.h */,
+				8C0F4E9919830C2900DE27FB /* SBTAppDelegate.m */,
+				8C0F4E9B19830C2900DE27FB /* Main.storyboard */,
+				8C0F4E9E19830C2900DE27FB /* SBTViewController.h */,
+				8C0F4E9F19830C2900DE27FB /* SBTViewController.m */,
+				8C0F4EA119830C2900DE27FB /* Images.xcassets */,
+				8C0F4E9019830C2900DE27FB /* Supporting Files */,
+			);
+			path = iPadScenePlayer;
+			sourceTree = "<group>";
+		};
+		8C0F4E9019830C2900DE27FB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C0F4E9119830C2900DE27FB /* iPadScenePlayer-Info.plist */,
+				8C0F4E9219830C2900DE27FB /* InfoPlist.strings */,
+				8C0F4E9519830C2900DE27FB /* main.m */,
+				8C0F4E9719830C2900DE27FB /* iPadScenePlayer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C0F4EAD19830C2900DE27FB /* iPadScenePlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C0F4EB319830C2900DE27FB /* iPadScenePlayerTests.m */,
+				8C0F4EAE19830C2900DE27FB /* Supporting Files */,
+			);
+			path = iPadScenePlayerTests;
+			sourceTree = "<group>";
+		};
+		8C0F4EAE19830C2900DE27FB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C0F4EAF19830C2900DE27FB /* iPadScenePlayerTests-Info.plist */,
+				8C0F4EB019830C2900DE27FB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,6 +317,41 @@
 			productReference = 2C37C861197FBF7A004E1D81 /* ScenePlayerPOCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8C0F4E8719830C2900DE27FB /* iPadScenePlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C0F4EB919830C2900DE27FB /* Build configuration list for PBXNativeTarget "iPadScenePlayer" */;
+			buildPhases = (
+				8C0F4E8419830C2900DE27FB /* Sources */,
+				8C0F4E8519830C2900DE27FB /* Frameworks */,
+				8C0F4E8619830C2900DE27FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPadScenePlayer;
+			productName = iPadScenePlayer;
+			productReference = 8C0F4E8819830C2900DE27FB /* iPadScenePlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8C0F4EA619830C2900DE27FB /* iPadScenePlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C0F4EBA19830C2900DE27FB /* Build configuration list for PBXNativeTarget "iPadScenePlayerTests" */;
+			buildPhases = (
+				8C0F4EA319830C2900DE27FB /* Sources */,
+				8C0F4EA419830C2900DE27FB /* Frameworks */,
+				8C0F4EA519830C2900DE27FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C0F4EAC19830C2900DE27FB /* PBXTargetDependency */,
+			);
+			name = iPadScenePlayerTests;
+			productName = iPadScenePlayerTests;
+			productReference = 8C0F4EA719830C2900DE27FB /* iPadScenePlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,6 +363,9 @@
 				ORGANIZATIONNAME = "Steve Walsh";
 				TargetAttributes = {
 					2C37C860197FBF7A004E1D81 = {
+						TestTargetID = 2C37C83F197FBF79004E1D81;
+					};
+					8C0F4EA619830C2900DE27FB = {
 						TestTargetID = 2C37C83F197FBF79004E1D81;
 					};
 				};
@@ -238,6 +385,8 @@
 			targets = (
 				2C37C83F197FBF79004E1D81 /* ScenePlayerPOC */,
 				2C37C860197FBF7A004E1D81 /* ScenePlayerPOCTests */,
+				8C0F4E8719830C2900DE27FB /* iPadScenePlayer */,
+				8C0F4EA619830C2900DE27FB /* iPadScenePlayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -264,6 +413,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C0F4E8619830C2900DE27FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0F4EA219830C2900DE27FB /* Images.xcassets in Resources */,
+				8C0F4E9419830C2900DE27FB /* InfoPlist.strings in Resources */,
+				8C0F4E9D19830C2900DE27FB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C0F4EA519830C2900DE27FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0F4EB219830C2900DE27FB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -286,6 +453,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C0F4E8419830C2900DE27FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0F4E9A19830C2900DE27FB /* SBTAppDelegate.m in Sources */,
+				8C0F4E9619830C2900DE27FB /* main.m in Sources */,
+				8C0F4EA019830C2900DE27FB /* SBTViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C0F4EA319830C2900DE27FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0F4EB419830C2900DE27FB /* iPadScenePlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,6 +478,11 @@
 			isa = PBXTargetDependency;
 			target = 2C37C83F197FBF79004E1D81 /* ScenePlayerPOC */;
 			targetProxy = 2C37C865197FBF7A004E1D81 /* PBXContainerItemProxy */;
+		};
+		8C0F4EAC19830C2900DE27FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C0F4E8719830C2900DE27FB /* iPadScenePlayer */;
+			targetProxy = 8C0F4EAB19830C2900DE27FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -325,6 +515,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				2C37C86B197FBF7A004E1D81 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8C0F4E9219830C2900DE27FB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C0F4E9319830C2900DE27FB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8C0F4E9B19830C2900DE27FB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C0F4E9C19830C2900DE27FB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8C0F4EB019830C2900DE27FB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C0F4EB119830C2900DE27FB /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -468,6 +682,98 @@
 			};
 			name = Release;
 		};
+		8C0F4EB519830C2900DE27FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPadScenePlayer/iPadScenePlayer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iPadScenePlayer/iPadScenePlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8C0F4EB619830C2900DE27FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPadScenePlayer/iPadScenePlayer-Prefix.pch";
+				INFOPLIST_FILE = "iPadScenePlayer/iPadScenePlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8C0F4EB719830C2900DE27FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScenePlayerPOC.app/Contents/MacOS/ScenePlayerPOC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPadScenePlayer/iPadScenePlayer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iPadScenePlayerTests/iPadScenePlayerTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8C0F4EB819830C2900DE27FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScenePlayerPOC.app/Contents/MacOS/ScenePlayerPOC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPadScenePlayer/iPadScenePlayer-Prefix.pch";
+				INFOPLIST_FILE = "iPadScenePlayerTests/iPadScenePlayerTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -497,6 +803,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8C0F4EB919830C2900DE27FB /* Build configuration list for PBXNativeTarget "iPadScenePlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0F4EB519830C2900DE27FB /* Debug */,
+				8C0F4EB619830C2900DE27FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8C0F4EBA19830C2900DE27FB /* Build configuration list for PBXNativeTarget "iPadScenePlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0F4EB719830C2900DE27FB /* Debug */,
+				8C0F4EB819830C2900DE27FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>926E7D11-FD75-40F7-8A5A-D10E02D6B1D0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ScenePlayerPOC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>095FF96E-3905-4376-8DD1-676C225A1B9E</key>
+		<string>https://github.com/zincsoda/sceneplayer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ScenePlayerPOC.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>095FF96E-3905-4376-8DD1-676C225A1B9E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zincsoda/sceneplayer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>095FF96E-3905-4376-8DD1-676C225A1B9E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>095FF96E-3905-4376-8DD1-676C225A1B9E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sceneplayer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

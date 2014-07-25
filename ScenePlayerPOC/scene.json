@@ -1,61 +1,28 @@
-{
-  "context": {
-    "duration": {
-      "value": 60,
-      "timescale": 1
-    }
-  },
-  "segments": [
-               {
-               "properties": {
-               "time_range": {
-               "start": {
-               "value": 0,
-               "timescale": 1
-               },
-               "duration": {
-               "value": 32,
-               "timescale": 1
-               }
-               },
-               "template_id": "4"
-               },
-               "layers": [
-                          {
-                          "layer_type": "video",
-                          "properties": {
-                          "timeRange": {
-                          "start": {
-                          "value": 0,
-                          "timescale": 1
-                          },
-                          "duration": {
-                          "value": 32,
-                          "timescale": 1
-                          }
-                          }
-                          },
-                          "url": "https://dl.dropboxusercontent.com/u/2572615/School%20App%20Kit%20Star%20Wars.m4v"
-                          },
-                          {
-                          "layer_type": "lower_third",
-                          "properties": {
-                          "layer_style_id": 1,
-                          "time_range": {
-                          "start": {
-                          "value": 5,
-                          "timescale": 1
-                          },
-                          "duration": {
-                          "value": 5,
-                          "timescale": 1
-                          }
-                          },
-                          "title": "Airbus",
-                          "subtitle": "Makes stuff"
-                          }
-                          }
-                          ]
-               }
-               ]
-}
+[
+ {
+ "keyPath": "transform.rotation",
+ "presentationTime": 1,
+ "fromValue": 0.0,
+ "toValue": -1.57079632679,
+ "duration": 4
+ },
+ { "keyPath": "opacity",
+ "presentationTime": 1,
+ "fromValue": 1.0,
+ "toValue": 0.3,
+ "duration": 4
+ },
+ {
+ "keyPath": "transform.rotation",
+ "presentationTime": 6,
+ "fromValue": -1.57079632679,
+ "toValue": 0.0,
+ "duration": 3
+ },
+ { "keyPath": "opacity",
+ "presentationTime": 6,
+ "fromValue": 0.3,
+ "toValue": 1.0,
+ "duration": 4
+ }
+ ]

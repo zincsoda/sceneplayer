@@ -21,6 +21,8 @@
 @property (weak) IBOutlet NSTextField *timeLabel;
 @property (nonatomic) NSTimeInterval lastTimerTick;
 @property (weak) IBOutlet NSSlider *slider;
+@property (weak) IBOutlet NSScrollView *textView;
+@property (unsafe_unretained) IBOutlet NSTextView *jsonTextView;
 
 @property (strong, nonatomic) NSView *greenBoxView;
 
@@ -34,16 +36,13 @@
   
   return @[
            @{
-             @"name": @"Rotate",
              @"keyPath": @"transform.rotation",
              @"presentationTime" : @"1",
              @"toValue": @(-M_PI / 2.f),
              @"fromValue": @(0.f),
              @"duration": @"4"
              },
-           // If there is a gap between timings the animation will jump back to the 'fromValue'
            @{
-             @"name": @"Rotate",
              @"keyPath": @"transform.rotation",
              @"presentationTime" : @"6",
              @"fromValue": @(-M_PI / 2.f),
@@ -51,6 +50,33 @@
              @"duration": @"3"
              }
            ];
+}
+- (IBAction)resetFromJson:(id)sender {
+  
+  NSString *text = [[self.jsonTextView textStorage] string];
+  NSData *data = [text dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *error;
+  NSArray *elements = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+
+  [self.greenBoxView removeFromSuperview];
+  [self createAnimationView];
+  [self.greenBoxView.layer addAnimation:[self makeAnimationGroupFromArrayOfElements:elements] forKey:nil];
+  self.greenBoxView.layer.speed = 0.0f;
+
+  [self.timer stop];
+  [self resumeTimer:nil];
+
+}
+
+
+- (void)createAnimationView{
+  
+  self.greenBoxView = [[NSView alloc] initWithFrame:NSMakeRect(150, 150, 100, 100)];
+  CALayer *greenViewLayer = [CALayer layer];
+  greenViewLayer.backgroundColor = [NSColor greenColor].CGColor;
+  [self.greenBoxView setLayer:greenViewLayer];
+  [self.sceneView addSubview:self.greenBoxView];
+  
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
@@ -62,37 +88,29 @@
   CALayer *viewLayer = [CALayer layer];
   viewLayer.backgroundColor = [NSColor orangeColor].CGColor;
   [self.sceneView setLayer:viewLayer];
+  [self.jsonTextView setAutomaticQuoteSubstitutionEnabled:NO];
+
+  [self createAnimationView];
   
   // Set up our green box view
-  self.greenBoxView = [[NSView alloc] initWithFrame:NSMakeRect(150, 150, 100, 100)];
-  CALayer *greenViewLayer = [CALayer layer];
-  greenViewLayer.backgroundColor = [NSColor greenColor].CGColor;
-  [self.greenBoxView setLayer:greenViewLayer];
-  [self.sceneView addSubview:self.greenBoxView];
   
   self.slider.minValue = 0;
   self.slider.maxValue = kSBTDuration;
   
+  //populate the textview with default scene json
+  
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"scene" ofType:@"json"];
+  NSString *fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+  
+  [self.jsonTextView setString:fileContents];
+  
+  NSData *data = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *error;
+  NSArray *elements = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+
+  
   // set up group of animations
-  
-  CAAnimationGroup *group = [CAAnimationGroup animation];
-  [group setDuration:kSBTDuration];
-  
-  NSMutableArray *animations = [NSMutableArray arrayWithCapacity:1];
-  
-  for (NSDictionary *sceneElement in self.sceneElements) {
-    
-    float presentationTime = [sceneElement[@"presentationTime"] floatValue];
-    CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:sceneElement];
-    ani.beginTime = presentationTime;
-    [ani setFillMode:kCAFillModeForwards];
-    [ani setRemovedOnCompletion:NO];
-    [animations addObject:ani];
-    
-  }
-  
-  [group setAnimations:animations];
-  [self.greenBoxView.layer addAnimation:group forKey:nil];
+  [self.greenBoxView.layer addAnimation:[self makeAnimationGroupFromArrayOfElements:elements] forKey:nil];
   self.greenBoxView.layer.speed = 0.0f;
   
   
@@ -122,6 +140,30 @@
   
 }
 
+
+- (CAAnimationGroup *)makeAnimationGroupFromArrayOfElements:(NSArray *)elements {
+  
+  CAAnimationGroup *group = [CAAnimationGroup animation];
+  [group setDuration:kSBTDuration];
+  
+  NSMutableArray *animations = [NSMutableArray arrayWithCapacity:1];
+  
+  for (NSDictionary *sceneElement in elements) {
+    
+    float presentationTime = [sceneElement[@"presentationTime"] floatValue];
+    CABasicAnimation *ani = [CABasicAnimation animationFromDictionary:sceneElement];
+    ani.beginTime = presentationTime;
+    [ani setFillMode:kCAFillModeForwards];
+    [ani setRemovedOnCompletion:NO];
+    [animations addObject:ani];
+    
+  }
+  
+  [group setAnimations:animations];
+  
+  return group;
+  
+}
 
 - (IBAction)sliderChanged:(id)sender {
   
