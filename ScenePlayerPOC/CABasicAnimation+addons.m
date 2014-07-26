@@ -16,10 +16,24 @@
   
   if ([settings[@"keyPath"] isEqualToString:@"position"]) {
     
+    
+    #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+    
+    CGPoint fromPoint = CGPointFromString(settings[@"fromValue"]);
+    animation.fromValue  =  [NSValue valueWithCGPoint:fromPoint];
+    CGPoint toPoint = CGPointFromString(settings[@"toValue"]);
+    animation.toValue  =  [NSValue valueWithCGPoint:toPoint];
+#else
+    
     NSPoint fromPoint = NSPointFromString(settings[@"fromValue"]);
     animation.fromValue  =  [NSValue valueWithPoint:fromPoint];
     NSPoint toPoint = NSPointFromString(settings[@"toValue"]);
-    animation.toValue  =  [NSValue valueWithPoint:toPoint];  }
+    animation.toValue  =  [NSValue valueWithPoint:toPoint];
+#endif
+
+  
+  
+  }
   else
   {
   animation.fromValue = [NSNumber numberWithFloat:[settings[@"fromValue"] floatValue]];

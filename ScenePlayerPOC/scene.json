@@ -14,8 +14,8 @@
   },
   { "keyPath": "position",
   "presentationTime": 1,
-  "fromValue": "0,0",
-  "toValue": "200,200",
+  "fromValue": "{10,10}",
+  "toValue": "{200,200}",
   "duration": 4
   },
   {

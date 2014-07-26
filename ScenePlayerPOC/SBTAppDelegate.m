@@ -16,7 +16,7 @@
 
 @interface SBTAppDelegate () <RMBSceneTimerDelegate>
 
-@property (weak) IBOutlet NSView *sceneView;
+@property (weak) IBOutlet UIView *sceneView;
 @property (nonatomic) RMBSceneTimer *timer;
 @property (weak) IBOutlet NSTextField *timeLabel;
 @property (nonatomic) NSTimeInterval lastTimerTick;
@@ -24,7 +24,7 @@
 @property (weak) IBOutlet NSScrollView *textView;
 @property (unsafe_unretained) IBOutlet NSTextView *jsonTextView;
 
-@property (strong, nonatomic) NSView *greenBoxView;
+@property (strong, nonatomic) UIView *greenBoxView;
 
 @end
 
@@ -71,9 +71,10 @@
 
 - (void)createAnimationView{
   
-  self.greenBoxView = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
+  self.greenBoxView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
   CALayer *greenViewLayer = [CALayer layer];
   greenViewLayer.backgroundColor = [NSColor greenColor].CGColor;
+  greenViewLayer.anchorPoint = CGPointMake(0,0);
   [self.greenBoxView setLayer:greenViewLayer];
   [self.sceneView addSubview:self.greenBoxView];
   

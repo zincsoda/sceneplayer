@@ -714,7 +714,7 @@
                             <action selector="resumeTimer:" target="Voe-Tx-rLC" id="DPP-rU-fiX"/>
                         </connections>
                     </button>
-                    <customView appearanceType="lightContent" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPj-GP-rju">
+                    <customView appearanceType="lightContent" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPj-GP-rju" customClass="UIView">
                         <rect key="frame" x="20" y="84" width="440" height="273"/>
                     </customView>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lou-Ab-rRh">

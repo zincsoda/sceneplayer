@@ -36,6 +36,10 @@
 		8C0F4EAA19830C2900DE27FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0F4E8D19830C2900DE27FB /* UIKit.framework */; };
 		8C0F4EB219830C2900DE27FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F4EB019830C2900DE27FB /* InfoPlist.strings */; };
 		8C0F4EB419830C2900DE27FB /* iPadScenePlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F4EB319830C2900DE27FB /* iPadScenePlayerTests.m */; };
+		8C0F4EBB1983B17F00DE27FB /* RMBSceneTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BADA319800DF0009FACBD /* RMBSceneTimer.m */; };
+		8C0F4EBC1983B18500DE27FB /* scene.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C37C877197FBFAD004E1D81 /* scene.json */; };
+		8C0F4EBD1983B19600DE27FB /* CABasicAnimation+addons.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BADA61981102E009FACBD /* CABasicAnimation+addons.m */; };
+		8C0F4EC41983B87500DE27FB /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F4EC31983B87500DE27FB /* UIView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,8 @@
 		8C0F4EAF19830C2900DE27FB /* iPadScenePlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPadScenePlayerTests-Info.plist"; sourceTree = "<group>"; };
 		8C0F4EB119830C2900DE27FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C0F4EB319830C2900DE27FB /* iPadScenePlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPadScenePlayerTests.m; sourceTree = "<group>"; };
+		8C0F4EC21983B87500DE27FB /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIView.h; path = ScenePlayerPOC/UIView.h; sourceTree = "<group>"; };
+		8C0F4EC31983B87500DE27FB /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIView.m; path = ScenePlayerPOC/UIView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,8 @@
 		2C37C837197FBF79004E1D81 = {
 			isa = PBXGroup;
 			children = (
+				8C0F4EC21983B87500DE27FB /* UIView.h */,
+				8C0F4EC31983B87500DE27FB /* UIView.m */,
 				2C37C849197FBF79004E1D81 /* ScenePlayerPOC */,
 				2C37C867197FBF7A004E1D81 /* ScenePlayerPOCTests */,
 				8C0F4E8F19830C2900DE27FB /* iPadScenePlayer */,
@@ -417,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C0F4EBC1983B18500DE27FB /* scene.json in Resources */,
 				8C0F4EA219830C2900DE27FB /* Images.xcassets in Resources */,
 				8C0F4E9419830C2900DE27FB /* InfoPlist.strings in Resources */,
 				8C0F4E9D19830C2900DE27FB /* Main.storyboard in Resources */,
@@ -440,6 +449,7 @@
 			files = (
 				2C37C857197FBF7A004E1D81 /* SBTAppDelegate.m in Sources */,
 				2C37C850197FBF7A004E1D81 /* main.m in Sources */,
+				8C0F4EC41983B87500DE27FB /* UIView.m in Sources */,
 				2C3BADA71981102E009FACBD /* CABasicAnimation+addons.m in Sources */,
 				2C3BADA419800DF0009FACBD /* RMBSceneTimer.m in Sources */,
 			);
@@ -458,7 +468,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0F4E9A19830C2900DE27FB /* SBTAppDelegate.m in Sources */,
+				8C0F4EBD1983B19600DE27FB /* CABasicAnimation+addons.m in Sources */,
 				8C0F4E9619830C2900DE27FB /* main.m in Sources */,
+				8C0F4EBB1983B17F00DE27FB /* RMBSceneTimer.m in Sources */,
 				8C0F4EA019830C2900DE27FB /* SBTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
