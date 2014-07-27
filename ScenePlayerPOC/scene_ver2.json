@@ -28,7 +28,8 @@
   "type": "video",
   "presentationTime": 7,
   "duration": 5,
-  "file": "fussball.mov",
+  "file": "fussball",
+  "filetype": "mov",
   "animations": [
                  {
                  "keyPath": "position",

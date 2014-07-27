@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScenePlayerPOC/SBTAppDelegate.m"
-            timestampString = "428167461.017153"
+            timestampString = "428169049.445712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "-updateSceneToTime:"
             landmarkType = "5">
          </BreakpointContent>

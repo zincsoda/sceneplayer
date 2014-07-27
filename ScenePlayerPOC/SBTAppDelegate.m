@@ -9,6 +9,8 @@
 #import "SBTAppDelegate.h"
 #import "RMBSceneTimer.h"
 #import "CABasicAnimation+addons.h"
+@import AVFoundation;
+
 
 #define kSBTZEROTIMEOFFSET 0.0
 #define kSBTDuration 20.0
@@ -25,6 +27,12 @@
 @property (unsafe_unretained) IBOutlet NSTextView *jsonTextView;
 @property (strong, nonatomic) NSView *greenBoxView;
 @property (strong, nonatomic) NSArray *sceneArray;
+
+//video setup
+
+@property (nonatomic, strong) AVPlayer *player;
+@property (nonatomic, strong) AVPlayerLayer *playerLayer;
+
 
 @end
 
@@ -67,7 +75,35 @@
 
   
   
+  
+  
+  
 }
+
+-(void)loadVideosFromAsset:(AVAsset*)video {
+  
+  [video loadValuesAsynchronouslyForKeys:@[@"tracks"] completionHandler:^{
+    dispatch_async(dispatch_get_main_queue(),
+                   ^{
+                     NSError *error;
+                     AVKeyValueStatus status = [video statusOfValueForKey:@"tracks" error:&error];
+                     if (status == AVKeyValueStatusLoaded) {
+//                       AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:video];
+//                       self.player = [AVPlayer playerWithPlayerItem:playerItem];
+//                       self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+//                       [self.sceneView setLayer:self.playerLayer];
+//                       [self.player play];
+                       NSLog(@"The asset's tracks were  loaded");
+
+                     } else {
+                       NSLog(@"The asset's tracks were not loaded:\n%@", [error localizedDescription]);
+                     }
+                   });
+  }];
+
+  
+}
+
 
 -(void)setUpSceneObjectsForElements:(NSArray *)elements {
   
@@ -92,8 +128,23 @@
       
     }
     else {
+      
+      // get the asset url
+      
+      NSString *filename = element[@"file"];
+      NSString *fileExtension = element[@"filetype"];
+      NSURL *videoURL = [[NSBundle mainBundle]
+                         URLForResource:filename withExtension:fileExtension];
+      
+      
+      AVURLAsset *video = [AVURLAsset URLAssetWithURL:videoURL options:nil];
+      
+      [self loadVideosFromAsset:video];
+      
+      [item setObject:video forKey:@"video"];
+      
       itemLayer.backgroundColor = [NSColor blueColor].CGColor;
-      itemLayer.speed = 0.0f;
+//      itemLayer.speed = 0.0f;
 
     }
     itemLayer.anchorPoint = CGPointMake(0,0);
@@ -242,11 +293,24 @@
     if (time >= presentationTime && time <= (presentationTime+duration)) {
       
       // animation should be in view, now calculate how far along
-      float offset = time-presentationTime;
-      theView.layer.timeOffset = offset;
       
-      [theView.layer setOpacity:1.0];
-      [theView.layer setNeedsDisplay];
+      if ([itemData[@"type"] isEqualToString:@"lowerThird"]) {
+        float offset = time-presentationTime;
+        theView.layer.timeOffset = offset;
+        [theView.layer setOpacity:1.0];
+        [theView.layer setNeedsDisplay];
+      }
+      
+      else {
+        AVURLAsset *video = (AVURLAsset *)item[@"video"];
+        AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:video];
+        self.player = [AVPlayer playerWithPlayerItem:playerItem];
+        self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+        [theView setLayer:self.playerLayer];
+        [self.player play];
+
+      }
+
 
       
     }
@@ -258,6 +322,9 @@
       
     }
     if (time < presentationTime) {
+      
+      
+      
       [theView.layer setOpacity:0.0];
       [theView.layer setNeedsDisplay];
 
