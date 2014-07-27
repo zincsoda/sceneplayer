@@ -144,7 +144,7 @@
       [item setObject:video forKey:@"video"];
       
       itemLayer.backgroundColor = [NSColor blueColor].CGColor;
-//      itemLayer.speed = 0.0f;
+      itemLayer.speed = 0.0f;
 
     }
     itemLayer.anchorPoint = CGPointMake(0,0);
@@ -302,12 +302,17 @@
       }
       
       else {
-        AVURLAsset *video = (AVURLAsset *)item[@"video"];
-        AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:video];
-        self.player = [AVPlayer playerWithPlayerItem:playerItem];
-        self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-        [theView setLayer:self.playerLayer];
-        [self.player play];
+        float offset = time-presentationTime;
+        theView.layer.timeOffset = offset;
+        [theView.layer setOpacity:1.0];
+        [theView.layer setNeedsDisplay];
+        
+//        AVURLAsset *video = (AVURLAsset *)item[@"video"];
+//        AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:video];
+//        self.player = [AVPlayer playerWithPlayerItem:playerItem];
+//        self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+//        [theView setLayer:self.playerLayer];
+//        [self.player play];
 
       }
 
