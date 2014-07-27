@@ -42,6 +42,8 @@
 		8C0F4EC41983B87500DE27FB /* UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F4EC31983B87500DE27FB /* UIView.m */; };
 		8C594FF219851921000A3AC2 /* scene_ver2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C594FF119851921000A3AC2 /* scene_ver2.json */; };
 		8C594FF319851921000A3AC2 /* scene_ver2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C594FF119851921000A3AC2 /* scene_ver2.json */; };
+		8C594FF5198520DB000A3AC2 /* fussball.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8C594FF4198520DB000A3AC2 /* fussball.mov */; };
+		8C594FF6198520DB000A3AC2 /* fussball.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8C594FF4198520DB000A3AC2 /* fussball.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,7 @@
 		8C0F4EC21983B87500DE27FB /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIView.h; path = ScenePlayerPOC/UIView.h; sourceTree = "<group>"; };
 		8C0F4EC31983B87500DE27FB /* UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIView.m; path = ScenePlayerPOC/UIView.m; sourceTree = "<group>"; };
 		8C594FF119851921000A3AC2 /* scene_ver2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = scene_ver2.json; sourceTree = "<group>"; };
+		8C594FF4198520DB000A3AC2 /* fussball.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = fussball.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				2C37C879197FE9D3004E1D81 /* burj.mp4 */,
+				8C594FF4198520DB000A3AC2 /* fussball.mov */,
 				2C37C855197FBF7A004E1D81 /* SBTAppDelegate.h */,
 				2C37C856197FBF7A004E1D81 /* SBTAppDelegate.m */,
 				2C3BADA51981102E009FACBD /* CABasicAnimation+addons.h */,
@@ -408,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C594FF5198520DB000A3AC2 /* fussball.mov in Resources */,
 				2C37C84E197FBF7A004E1D81 /* InfoPlist.strings in Resources */,
 				2C37C85C197FBF7A004E1D81 /* Images.xcassets in Resources */,
 				8C594FF219851921000A3AC2 /* scene_ver2.json in Resources */,
@@ -432,6 +437,7 @@
 			files = (
 				8C0F4EBC1983B18500DE27FB /* scene.json in Resources */,
 				8C0F4EA219830C2900DE27FB /* Images.xcassets in Resources */,
+				8C594FF6198520DB000A3AC2 /* fussball.mov in Resources */,
 				8C594FF319851921000A3AC2 /* scene_ver2.json in Resources */,
 				8C0F4E9419830C2900DE27FB /* InfoPlist.strings in Resources */,
 				8C0F4E9D19830C2900DE27FB /* Main.storyboard in Resources */,

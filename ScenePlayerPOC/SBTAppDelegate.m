@@ -11,74 +11,25 @@
 #import "CABasicAnimation+addons.h"
 
 #define kSBTZEROTIMEOFFSET 0.0
-#define kSBTDuration 10.0
+#define kSBTDuration 20.0
 
 
 @interface SBTAppDelegate () <RMBSceneTimerDelegate>
 
-@property (weak) IBOutlet UIView *sceneView;
+@property (weak) IBOutlet NSView *sceneView;
 @property (nonatomic) RMBSceneTimer *timer;
 @property (weak) IBOutlet NSTextField *timeLabel;
 @property (nonatomic) NSTimeInterval lastTimerTick;
 @property (weak) IBOutlet NSSlider *slider;
 @property (weak) IBOutlet NSScrollView *textView;
 @property (unsafe_unretained) IBOutlet NSTextView *jsonTextView;
-
-@property (strong, nonatomic) UIView *greenBoxView;
+@property (strong, nonatomic) NSView *greenBoxView;
+@property (strong, nonatomic) NSArray *sceneArray;
 
 @end
 
 @implementation SBTAppDelegate
 
-
-
-- (NSArray*)sceneElements {
-  
-  return @[
-           @{
-             @"keyPath": @"transform.rotation",
-             @"presentationTime" : @"1",
-             @"toValue": @(-M_PI / 2.f),
-             @"fromValue": @(0.f),
-             @"duration": @"4"
-             },
-           @{
-             @"keyPath": @"transform.rotation",
-             @"presentationTime" : @"6",
-             @"fromValue": @(-M_PI / 2.f),
-             @"toValue": @(0.f),
-             @"duration": @"3"
-             }
-           ];
-}
-- (IBAction)resetFromJson:(id)sender {
-  
-  NSString *text = [[self.jsonTextView textStorage] string];
-  NSData *data = [text dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *error;
-  NSArray *elements = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-
-  [self.greenBoxView removeFromSuperview];
-  [self createAnimationView];
-  [self.greenBoxView.layer addAnimation:[self makeAnimationGroupFromArrayOfElements:elements] forKey:nil];
-  self.greenBoxView.layer.speed = 0.0f;
-
-  [self.timer stop];
-  [self resumeTimer:nil];
-
-}
-
-
-- (void)createAnimationView{
-  
-  self.greenBoxView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-  CALayer *greenViewLayer = [CALayer layer];
-  greenViewLayer.backgroundColor = [NSColor greenColor].CGColor;
-  greenViewLayer.anchorPoint = CGPointMake(0,0);
-  [self.greenBoxView setLayer:greenViewLayer];
-  [self.sceneView addSubview:self.greenBoxView];
-  
-}
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
@@ -90,8 +41,8 @@
   viewLayer.backgroundColor = [NSColor orangeColor].CGColor;
   [self.sceneView setLayer:viewLayer];
   [self.jsonTextView setAutomaticQuoteSubstitutionEnabled:NO];
-
-  [self createAnimationView];
+  
+//  [self createAnimationView];
   
   // Set up our green box view
   
@@ -100,7 +51,7 @@
   
   //populate the textview with default scene json
   
-  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"scene" ofType:@"json"];
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"scene_ver2" ofType:@"json"];
   NSString *fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
   
   [self.jsonTextView setString:fileContents];
@@ -108,14 +59,108 @@
   NSData *data = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
   NSError *error;
   NSArray *elements = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-
+  
+  // the elements are views of two different types (lower third and video)
+  [self setUpSceneObjectsForElements:elements];
   
   // set up group of animations
-  [self.greenBoxView.layer addAnimation:[self makeAnimationGroupFromArrayOfElements:elements] forKey:nil];
-  self.greenBoxView.layer.speed = 0.0f;
+
   
   
 }
+
+-(void)setUpSceneObjectsForElements:(NSArray *)elements {
+  
+  // first the views
+  self.sceneArray = nil;
+
+  NSMutableArray *sceneArraySetup = [NSMutableArray arrayWithCapacity:1];
+  
+  for (id element in elements) {
+    
+    // first copy element data into the dictionary
+    NSMutableDictionary *item = [NSMutableDictionary dictionaryWithObject:element forKey:@"data"];
+    NSRect ourRect = [self returnRectFromData:element];
+    NSView *itemView = [[NSView alloc] initWithFrame:ourRect];
+    
+    // add a layer, green for lower third, red for video
+    
+    CALayer *itemLayer = [CALayer layer];
+    if ([element[@"type"] isEqualToString:@"lowerThird"]) {
+      itemLayer.backgroundColor = [NSColor greenColor].CGColor;
+      itemLayer.speed = 0.0f;
+      
+    }
+    else {
+      itemLayer.backgroundColor = [NSColor blueColor].CGColor;
+      itemLayer.speed = 0.0f;
+
+    }
+    itemLayer.anchorPoint = CGPointMake(0,0);
+    [itemLayer addAnimation:[self makeAnimationGroupFromArrayOfElements:element[@"animations"]] forKey:nil];
+    
+    [itemView setLayer:itemLayer];
+    
+    // now add animations to this view
+    [item setObject:itemView forKey:@"view"];
+    
+    [self.sceneView addSubview:itemView];
+    [itemView.layer setOpacity:0.0];
+    [sceneArraySetup addObject:item];
+  }
+  
+  
+  self.sceneArray = sceneArraySetup;
+  
+  
+}
+
+
+
+- (NSRect)returnRectFromData:(NSDictionary *)data {
+  
+  NSPoint origin = NSPointFromString(data[@"origin"]);
+  NSPoint size = NSPointFromString(data[@"size"]);
+  NSRect theRect = NSMakeRect(origin.x, origin.y, size.x, size.y);
+  
+  return theRect ;
+}
+
+
+- (void)createAnimationView{
+  
+  self.greenBoxView = [[NSView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+  CALayer *greenViewLayer = [CALayer layer];
+  greenViewLayer.backgroundColor = [NSColor greenColor].CGColor;
+  greenViewLayer.anchorPoint = CGPointMake(0,0);
+  [self.greenBoxView setLayer:greenViewLayer];
+  [self.sceneView addSubview:self.greenBoxView];
+  
+}
+
+
+- (IBAction)resetFromJson:(id)sender {
+  
+  NSString *text = [[self.jsonTextView textStorage] string];
+  NSData *data = [text dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *error;
+  NSArray *elements = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+  
+  for (id item in self.sceneArray) {
+    
+    NSView *theView = (NSView *)item[@"view"];
+    [theView removeFromSuperview];
+  }
+  
+  
+  [self setUpSceneObjectsForElements:elements];
+
+  [self.timer stop];
+  [self resumeTimer:nil];
+  
+}
+
+
 
 - (void)timeUpdate:(NSTimeInterval)time {
   
@@ -128,8 +173,7 @@
   // Receiving ticks every 10 milliseconds
   
   [self.slider setDoubleValue:time];
-  self.greenBoxView.layer.timeOffset = time;
-  
+  [self updateSceneToTime:time];
   // record time of last tick
   
   self.lastTimerTick = time;
@@ -170,20 +214,74 @@
   
   [self.timer pause];
   float position = [sender floatValue];
-  self.greenBoxView.layer.timeOffset = position;
+  
+  // update all the time offsets where appropriate
+  
+  [self updateSceneToTime:position];
+  
+//  self.greenBoxView.layer.timeOffset = position;
   [self.timeLabel setStringValue:[NSString stringWithFormat:@"%d", (int)position]];
   [self.timer setSceneTime:position];
-
+  
 }
+
+- (void)updateSceneToTime:(float)time {
+  
+  for (id item in self.sceneArray) {
+    
+    NSView *theView = (NSView *)item[@"view"];
+    
+    
+    // is this animation in view?  is time > presentationtime && < (presentation + duration)
+    NSDictionary *itemData = item[@"data"];
+    float presentationTime = [itemData[@"presentationTime"] floatValue];
+    float duration = [itemData[@"duration"] floatValue];
+
+
+    
+    if (time >= presentationTime && time <= (presentationTime+duration)) {
+      
+      // animation should be in view, now calculate how far along
+      float offset = time-presentationTime;
+      theView.layer.timeOffset = offset;
+      
+      [theView.layer setOpacity:1.0];
+      [theView.layer setNeedsDisplay];
+
+      
+    }
+    
+    else {
+//      [theView.layer setHidden:YES];
+      [theView.layer setOpacity:0.0];
+      [theView.layer setNeedsDisplay];
+      
+    }
+    if (time < presentationTime) {
+      [theView.layer setOpacity:0.0];
+      [theView.layer setNeedsDisplay];
+
+    }
+    if (time > presentationTime+duration) {
+      [theView.layer setOpacity:0.0];
+      [theView.layer setNeedsDisplay];
+    }
+    
+    // calculate the offset
+    
+  }
+  
+}
+
 
 - (IBAction)pauseTimer:(id)sender {
   
   [self.timer pause];
-
+  
 }
 
 - (IBAction)resumeTimer:(id)sender {
-
+  
   [self.timer resume];
   
 }

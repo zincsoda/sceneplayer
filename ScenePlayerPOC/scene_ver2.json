@@ -1,71 +1,41 @@
  [
   {
   "type": "lowerThird",
+  "origin": "{0,0}",
+  "size": "{50,50}",
   "presentationTime": 1,
-  "duration": 10,
+  "duration": 5,
   "animations": [
                  {
                  "keyPath": "transform.rotation",
-                 "presentationTime": 1,
+                 "presentationTime": 0,
                  "fromValue": 0.0,
                  "toValue": -1.57079632679,
                  "duration": 4
                  },
                  {
-                 "keyPath": "opacity",
-                 "presentationTime": 1,
-                 "fromValue": 1.0,
-                 "toValue": 0.3,
-                 "duration": 4
-                 },
-                 {
                  "keyPath": "position",
                  "presentationTime": 1,
                  "fromValue": "{0,0}",
                  "toValue": "{200,200}",
-                 "duration": 4
-                 },
-                 {
-                 "keyPath": "transform.rotation",
-                 "presentationTime": 6,
-                 "fromValue": -1.57079632679,
-                 "toValue": 0.0,
-                 "duration": 3
-                 },
-                 {
-                 "keyPath": "opacity",
-                 "presentationTime": 6,
-                 "fromValue": 0.3,
-                 "toValue": 1.0,
                  "duration": 4
                  }
                  ]
   },
   {
-  "duration": 10,
-  "presentationTime": 12,
-  "type": "lowerThird",
+  "size": "{100,100}",
+  "origin": "{150,100}",
+  "type": "video",
+  "presentationTime": 7,
+  "duration": 5,
+  "file": "fussball.mov",
   "animations": [
-                {
-                 "keyPath": "opacity",
-                 "presentationTime": 1,
-                 "fromValue": 1.0,
-                 "toValue": 0.3,
-                 "duration": 4
-                 },
                  {
                  "keyPath": "position",
-                 "presentationTime": 1,
-                 "fromValue": "{0,0}",
-                 "toValue": "{200,200}",
-                 "duration": 4
-                 },
-                 {
-                 "keyPath": "opacity",
-                 "presentationTime": 6,
-                 "fromValue": 0.3,
-                 "toValue": 1.0,
-                 "duration": 4
+                 "presentationTime": 0,
+                 "fromValue": "{150,100}",
+                 "toValue": "{50,50}",
+                 "duration": 3
                  }
                  ]
   }

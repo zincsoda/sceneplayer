@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ScenePlayerPOC/CABasicAnimation+addons.m"
-            timestampString = "428062243.158452"
+            filePath = "ScenePlayerPOC/SBTAppDelegate.m"
+            timestampString = "428167461.017153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "+animationFromDictionary:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScenePlayerPOC/CABasicAnimation+addons.m"
-            timestampString = "428062343.206557"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "+animationFromDictionary:"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
+            landmarkName = "-updateSceneToTime:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
