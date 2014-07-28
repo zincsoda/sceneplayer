@@ -27,6 +27,8 @@
 @property (unsafe_unretained) IBOutlet NSTextView *jsonTextView;
 @property (strong, nonatomic) NSView *greenBoxView;
 @property (strong, nonatomic) NSArray *sceneArray;
+@property BOOL isPlaying;
+@property BOOL isScrubbing;
 
 //video setup
 
@@ -49,6 +51,8 @@
   viewLayer.backgroundColor = [NSColor orangeColor].CGColor;
   [self.sceneView setLayer:viewLayer];
   [self.jsonTextView setAutomaticQuoteSubstitutionEnabled:NO];
+  self.isPlaying = NO;
+  self.isScrubbing = NO;
   
 //  [self createAnimationView];
   
@@ -74,7 +78,7 @@
   // set up group of animations
 
   
-  
+//  UIView *videoView = [[UIView alloc] initWithFrame:NSMakeRect(10, 10, 300, 200)];
   
   
   
@@ -117,15 +121,23 @@
     // first copy element data into the dictionary
     NSMutableDictionary *item = [NSMutableDictionary dictionaryWithObject:element forKey:@"data"];
     NSRect ourRect = [self returnRectFromData:element];
+    
     NSView *itemView = [[NSView alloc] initWithFrame:ourRect];
     
     // add a layer, green for lower third, red for video
     
     CALayer *itemLayer = [CALayer layer];
+    
     if ([element[@"type"] isEqualToString:@"lowerThird"]) {
+      
       itemLayer.backgroundColor = [NSColor greenColor].CGColor;
       itemLayer.speed = 0.0f;
       
+      itemLayer.anchorPoint = CGPointMake(0,0);
+      [itemLayer addAnimation:[self makeAnimationGroupFromArrayOfElements:element[@"animations"]] forKey:nil];
+      [itemView setLayer:itemLayer];
+      [itemView.layer setOpacity:0.0];
+
     }
     else {
       
@@ -143,20 +155,34 @@
       
       [item setObject:video forKey:@"video"];
       
-      itemLayer.backgroundColor = [NSColor blueColor].CGColor;
-      itemLayer.speed = 0.0f;
+      // add animations to main layer
+      
+//      [itemLayer addAnimation:[self makeAnimationGroupFromArrayOfElements:element[@"animations"]] forKey:nil];
+//      [itemView setLayer:itemLayer];
+//      itemLayer.speed = 0.0f;
+      
+      // add sub view with video player layer , player and playeritem set up
+//      
+      AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:video];
+      AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
+      
+      AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
+      [playerLayer addAnimation:[self makeAnimationGroupFromArrayOfElements:element[@"animations"]] forKey:nil];
+
+      [itemView setLayer:playerLayer];
+      
+      [item setObject:player forKey:@"videoPlayer"];
+//     [player play];
+      // OR set these up only when visible and release them accordingly??
+      
+//      itemLayer.backgroundColor = [NSColor blueColor].CGColor;
 
     }
-    itemLayer.anchorPoint = CGPointMake(0,0);
-    [itemLayer addAnimation:[self makeAnimationGroupFromArrayOfElements:element[@"animations"]] forKey:nil];
-    
-    [itemView setLayer:itemLayer];
-    
+
     // now add animations to this view
     [item setObject:itemView forKey:@"view"];
     
     [self.sceneView addSubview:itemView];
-    [itemView.layer setOpacity:0.0];
     [sceneArraySetup addObject:item];
   }
   
@@ -263,6 +289,9 @@
 
 - (IBAction)sliderChanged:(id)sender {
   
+  
+  self.isScrubbing = YES;
+
   [self.timer pause];
   float position = [sender floatValue];
   
@@ -303,21 +332,31 @@
       
       else {
         float offset = time-presentationTime;
-        theView.layer.timeOffset = offset;
+//        theView.layer.timeOffset = offset;
         [theView.layer setOpacity:1.0];
-        [theView.layer setNeedsDisplay];
         
-//        AVURLAsset *video = (AVURLAsset *)item[@"video"];
-//        AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:video];
-//        self.player = [AVPlayer playerWithPlayerItem:playerItem];
-//        self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-//        [theView setLayer:self.playerLayer];
-//        [self.player play];
+        AVPlayer *player = (AVPlayer *)item[@"videoPlayer"];
+        
+//        theView.layer.timeOffset = offset;
 
+        if (self.isPlaying == NO) {
+          [player pause];
+          [player seekToTime:CMTimeMake(offset, 1)];
+          theView.layer.speed = 0.0;
+          theView.layer.timeOffset = offset;
+
+        }
+        else{
+          if (player.rate == 0.0) {
+            [player play];
+            theView.layer.speed = 1.0;
+          }
+          else {
+            //player already playing
+            
+          }
+        }
       }
-
-
-      
     }
     
     else {
@@ -347,13 +386,24 @@
 
 
 - (IBAction)pauseTimer:(id)sender {
+
+  self.isPlaying = NO;
+
+  // need to inform any videos to pause
   
+  [self updateSceneToTime:self.lastTimerTick];
   [self.timer pause];
   
 }
 
+
+
+
 - (IBAction)resumeTimer:(id)sender {
   
+  self.isPlaying = YES;
+  self.isScrubbing = NO;
+
   [self.timer resume];
   
 }

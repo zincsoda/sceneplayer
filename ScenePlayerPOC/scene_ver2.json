@@ -1,7 +1,7 @@
  [
   {
   "type": "lowerThird",
-  "origin": "{0,0}",
+  "origin": "{200,200}",
   "size": "{50,50}",
   "presentationTime": 1,
   "duration": 5,
@@ -16,27 +16,48 @@
                  {
                  "keyPath": "position",
                  "presentationTime": 1,
-                 "fromValue": "{0,0}",
-                 "toValue": "{200,200}",
+                 "fromValue": "{200,200}",
+                 "toValue": "{50,50}",
                  "duration": 4
                  }
                  ]
   },
   {
-  "size": "{100,100}",
-  "origin": "{150,100}",
+  "size": "{200,140}",
+  "origin": "{0,0}",
   "type": "video",
-  "presentationTime": 7,
-  "duration": 5,
-  "file": "fussball",
-  "filetype": "mov",
+  "presentationTime": 3,
+  "duration": 15,
+  "file": "old_sample",
+  "filetype": "mp4",
   "animations": [
                  {
+                 "keyPath": "opacity",
+                 "presentationTime": 1,
+                 "fromValue": 0.0,
+                 "toValue": 1.0,
+                 "duration": 5
+                 },
+                 {
                  "keyPath": "position",
-                 "presentationTime": 0,
-                 "fromValue": "{150,100}",
+                 "presentationTime": 1,
+                 "fromValue": "{0,0}",
+                 "toValue": "{150,150}",
+                 "duration": 5
+                 },
+                 {
+                 "keyPath": "position",
+                 "presentationTime": 6,
+                 "fromValue": "{150,150}",
                  "toValue": "{50,50}",
-                 "duration": 3
+                 "duration": 4
+                 },
+                 {
+                 "keyPath": "opacity",
+                 "presentationTime": 9,
+                 "fromValue": 1.0,
+                 "toValue": 0.0,
+                 "duration": 1
                  }
                  ]
   }
