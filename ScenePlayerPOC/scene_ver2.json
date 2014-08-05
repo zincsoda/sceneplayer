@@ -1,75 +1,68 @@
-[
- {
- "size": "{240,124}",
- "origin": "{0,0}",
- "type": "video",
- "presentationTime": 0,
- "duration": 20,
- "file": "burj",
- "filetype": "mp4",
- "animations": [
-                {
-                "keyPath": "opacity",
-                "presentationTime": 0,
-                "fromValue": 0.0,
-                "toValue": 1.0,
-                "duration": 1
-                },
-                {
-                "keyPath": "position",
-                "presentationTime": 1,
-                "fromValue": "{200,200}",
-                "toValue": "{0,0}",
-                "duration": 4
-                },
-                {
-                "keyPath": "opacity",
-                "presentationTime": 19,
-                "fromValue": 1.0,
-                "toValue": 0.0,
-                "duration": 1
-                }
-                ]
- },
- {
- "size": "{220,124}",
- "origin": "{440,100}",
- "type": "video",
- "presentationTime": 1,
- "duration": 15,
- "file": "old_sample",
- "filetype": "mp4",
- "animations": [
-                {
-                "keyPath": "position",
-                "presentationTime": 0,
-                "fromValue": "{440,100}",
-                "toValue": "{0,100}",
-                "duration": 15
-                }
-                ]
- },
- {
- "type": "lowerThird",
- "origin": "{200,200}",
- "size": "{250,50}",
- "presentationTime": 1,
- "duration": 5,
- "animations": [
-                {
-                "keyPath": "transform.rotation",
-                "presentationTime": 0,
-                "fromValue": 0.0,
-                "toValue": -1.57079632679,
-                "duration": 4
-                },
-                {
-                "keyPath": "position",
-                "presentationTime": 1,
-                "fromValue": "{200,200}",
-                "toValue": "{50,50}",
-                "duration": 4
-                }
-                ]
- }
- ]
+ [
+  {
+  "size": "{440,248}",
+  "origin": "{0,0}",
+  "type": "video",
+  "presentationTime": 0,
+  "duration": 20,
+  "file": "burj",
+  "filetype": "mp4",
+  "animations": [
+                 {
+                 "keyPath": "opacity",
+                 "presentationTime": 0,
+                 "fromValue": 0.0,
+                 "toValue": 1.0,
+                 "duration": 1
+                 },
+                 {
+                 "keyPath": "opacity",
+                 "presentationTime": 19,
+                 "fromValue": 1.0,
+                 "toValue": 0.0,
+                 "duration": 1
+                 }
+                 ]
+  },
+  {
+  "size": "{220,124}",
+  "origin": "{440,100}",
+  "type": "video",
+  "presentationTime": 1,
+  "duration": 15,
+  "file": "old_sample",
+  "filetype": "mp4",
+  "animations": [
+                 {
+                 "keyPath": "position",
+                 "presentationTime": 0,
+                 "fromValue": "{440,100}",
+                 "toValue": "{0,100}",
+                 "duration": 15
+                 }
+                 ]
+  },
+  {
+  "type": "lowerThird",
+  "origin": "{200,200}",
+  "size": "{250,50}",
+  "presentationTime": 1,
+  "duration": 5,
+  "animations": [
+                 {
+                 "keyPath": "transform.rotation",
+                 "presentationTime": 0,
+                 "fromValue": 0.0,
+                 "toValue": -1.57079632679,
+                 "duration": 4
+                 },
+                 {
+                 "keyPath": "position",
+                 "presentationTime": 1,
+                 "fromValue": "{200,200}",
+                 "toValue": "{50,50}",
+                 "duration": 4
+                 }
+                 ]
+  }
+  ]
